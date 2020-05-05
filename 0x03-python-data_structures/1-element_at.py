@@ -2,9 +2,7 @@
 
 
 def element_at(my_list, idx):
-    if idx < 0:
+    if (len(my_list) >= idx and idx >= 0):
+        return my_list[idx]
+    else:
         return None
-    if len(my_list) < idx:
-        return None
-
-    return my_list[idx]
