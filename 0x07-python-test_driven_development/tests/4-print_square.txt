@@ -1,0 +1,44 @@
+# Unit tests for 4-print_square.py
+
+
+>>> print_square = __import__('4-print_square').print_square
+
+
+# Base usage to make sure its working by default
+>>> print_square(4)
+####
+####
+####
+####
+
+
+# i just want to print a big square cus its fun.
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+
+# Passing a string into the args. (Should raise type error)
+>>> print_square("i am a number foolish computer.")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+
+# a negative number should raise a value error.
+>>> print_square(-4000000)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+
+# passing a float should also cause an exception
+>>> print_square(-4000000.666666666)
+Traceback (most recent call last):
+TypeError: size must be an integer
