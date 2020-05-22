@@ -1,18 +1,56 @@
+# All unit tests for 0-add_integer.py
+
 >>> add_integer = __import__('0-add_integer').add_integer
+
+
+# Basic calculation. Should have no errors
 
 >>> add_integer(98, 1)
 99
 
+
+# Using a negative number - should work
+
 >>> add_integer(100, -2)
 98
 
+
+# Using a float as a value. Should be casted to int and work
+
 >>> add_integer(100.3, -2)
 98
+
+
+# Using a string as a value. Should raise a typeError
 
 >>> add_integer("AAAAH", 68)
 Traceback (most recent call last):
 TypeError: a must be an integer
 
+
+# Using a string in B, should raise a typeError
+
 >>> add_integer(1.0, "sup")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+
+# Using two strings - Should raise a typeError
+
+>>> add_integer("AAAAH", "woah bro watch it")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+
+# Using a boolean as A, should raise a TypeError for A
+
+>>> add_integer(True, "woah bro watch it")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+
+# Using a boolean for B, should raise a TypeError for B
+
+>>> add_integer(1.0, False)
 Traceback (most recent call last):
 TypeError: b must be an integer
