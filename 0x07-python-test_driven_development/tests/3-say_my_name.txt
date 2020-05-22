@@ -1,0 +1,31 @@
+# All unit tests for 3-say_my_name.py
+
+# Import the funky wunky function
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+# Basic test case to make sure it works to begin with
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+
+# Lots of white space should still work
+>>> say_my_name("John    ", "Smith          ")
+My name is John     Smith          
+
+
+# Passing a number in should raise an exception with custom msg
+>>> say_my_name("John", 98)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+
+# Testing numbers in both args
+>>> say_my_name(40000000000, 98)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+
+# Only 1 argument should just plugin an empty string
+>>> say_my_name("kek")
+My name is kek 
