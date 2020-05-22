@@ -1,0 +1,20 @@
+# Unit tests for 5-text_indentation.py
+
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+# Base test case
+>>> text_indentation("test. test? test:")
+test.
+<BLANKLINE>
+test?
+<BLANKLINE>
+test:
+<BLANKLINE>
+
+
+# Pass arg as an integer
+>>> text_indentation(123)
+Traceback (most recent call last):
+TypeError: text must be a string
