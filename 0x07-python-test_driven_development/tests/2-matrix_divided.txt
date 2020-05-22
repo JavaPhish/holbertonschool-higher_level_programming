@@ -1,0 +1,37 @@
+# All unit tests for 2-matrix_divided.py
+
+# Import and initialize some stuff for testing
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix = [ [1, 2, 3], [4, 5, 6] ]
+
+
+# Basic test case to make sure it works to begin with
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+
+# div = 0, making sure it cant divide by zero (Would be cool if it could tho)
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+
+# Inconsistant matrix lengths - Should raise an exception
+>>> matrix = [ [1, 2, 3], [4, 5] ]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+
+# Setting div to something that isnt a number
+>>> matrix = [ [1, 2, 3], [4, 5, 6] ]
+>>> matrix_divided(matrix, "haha i am a number you foolish human :)")
+Traceback (most recent call last):
+TypeError: div must be a number
+
+
+# Setting a value in the matrix to a string
+>>> matrix = [ [1, 2, 3], ["Worm off the string, what crimes will he commit?", 5, 6] ]
+>>> matrix_divided(matrix, 3)
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
