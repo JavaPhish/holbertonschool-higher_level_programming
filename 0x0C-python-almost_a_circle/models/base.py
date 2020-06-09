@@ -20,7 +20,6 @@ class Base:
             self.__nb_objects = 0
             self.id = id
 
-
     @staticmethod
     def from_json_string(json_string):
         """ returns the list of the JSON string representation """
@@ -87,4 +86,3 @@ class Base:
     def to_json_string(my_obj):
         """ json representation of a string """
         return json.dumps(my_obj)
-
