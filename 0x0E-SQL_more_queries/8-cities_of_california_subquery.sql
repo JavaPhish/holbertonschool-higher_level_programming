@@ -1,4 +1,4 @@
 -- stuff from cali
 SELECT cities.id, cities.name FROM cities, states
-WHERE states.name = 'California'
+WHERE state_id = 1
 ORDER BY cities.id ASC;
