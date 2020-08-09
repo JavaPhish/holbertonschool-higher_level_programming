@@ -22,11 +22,11 @@ if __name__ == '__main__':
 
     """ Print out our query :) """
 
-    if session.query(State).order_by(State.id).first() == None:
+    if session.query(State).order_by(State.id).first() is None:
         print("Nothing")
     else:
-       print(session.query(State).order_by(State.id).first().id, end=": ")
-       print(session.query(State).order_by(State.id).first().name)
+        print(session.query(State).order_by(State.id).first().id, end=": ")
+        print(session.query(State).order_by(State.id).first().name)
 
     """ Close the session """
     session.close()
