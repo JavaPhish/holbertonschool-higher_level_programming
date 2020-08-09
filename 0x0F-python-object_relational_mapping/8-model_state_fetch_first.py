@@ -21,8 +21,12 @@ if __name__ == '__main__':
     session = Session()
 
     """ Print out our query :) """
-    print(session.query(State).order_by(State.id).first().id, end=": ")
-    print(session.query(State).order_by(State.id).first().name)
+
+    if session.query(State).order_by(State.id).first() == None:
+        print("Nothing")
+    else:
+       print(session.query(State).order_by(State.id).first().id, end=": ")
+       print(session.query(State).order_by(State.id).first().name)
 
     """ Close the session """
     session.close()
