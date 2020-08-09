@@ -6,7 +6,7 @@ import MySQLdb
 
 
 if __name__ == "__main__":
-    """ Arguments: mysql user, password, and DB name """
+    """ Arguments: mysql user, password, DB name, and search query """
 
     """ Connect to already made SQL server with arguments """
     connection = MySQLdb.connect(host="localhost", port=3306,
@@ -15,15 +15,15 @@ if __name__ == "__main__":
 
     """ Create a 'cursor' and execute a basic SQL query """
     curs = connection.cursor()
-    curs.execute("SELECT * FROM states ORDER BY id ASC")
+    sql = "SELECT * FROM states"  # This is just to satisfy pep8
+    curs.execute("{} WHERE name='{}' ORDER BY id ASC".format(sql, sys.argv[4]))
 
     """ Save the data from the query """
     query = curs.fetchall()
 
     """ Print out the data from the query """
     for rows in query:
-        if (rows[1] == sys.argv[4]):
-            print(rows)
+        print(rows)
 
     """ Close the connections b4 we leave and get mcdonalds """
     """ I want mcdonalds. """
