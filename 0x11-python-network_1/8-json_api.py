@@ -20,6 +20,6 @@ if __name__ == '__main__':
     name = r.json().get('name')
 
     if (id is not None and name is not None):
-        print('[{}] <{}>'.format(id, name))
+        print('[{}] {}'.format(id, name))
     else:
         print('No result')
