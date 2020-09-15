@@ -9,6 +9,7 @@ if (Number(process.argv[2]) && Number(process.argv[2]) !== 1) {
       max = process.argv[x];
     }
   }
+
   for (let x = 2; x < process.argv.length; x++) {
     if (process.argv[x] > sec && process.argv[x] !== max) {
       sec = process.argv[x];
