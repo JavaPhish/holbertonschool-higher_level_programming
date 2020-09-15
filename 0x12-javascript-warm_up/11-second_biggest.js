@@ -5,13 +5,13 @@ if (Number(process.argv[2]) && Number(process.argv[2]) !== 1) {
   let sec = process.argv[3];
 
   for (let x = 2; x < process.argv.length; x++) {
-    if (process.argv[x] > max) {
+    if (Number(process.argv[x]) > max) {
       max = process.argv[x];
     }
   }
 
   for (let x = 2; x < process.argv.length; x++) {
-    if (process.argv[x] > sec && process.argv[x] !== max) {
+    if (Number(process.argv[x]) > sec && process.argv[x] !== max) {
       sec = process.argv[x];
     }
   }
