@@ -1,8 +1,7 @@
 #!/usr/bin/node
 
 if (process.argv.length > 3) {
-  let argN = process.argv.splice(2).map(Number);
-  argN = [...new Set(argN)];
+  const argN = process.argv.splice(2).map(Number);
   argN.sort();
   console.log(argN[argN.length - 2]);
 } else {
